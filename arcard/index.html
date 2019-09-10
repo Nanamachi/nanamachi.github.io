@@ -18,7 +18,7 @@
       var screen = new THREE.Mesh(plane, material);
       screen.position.y = 1
 
-      AFRAME.registerComponent('pole', {
+      AFRAME.registerComponent('screen', {
         init: function() {
           this.el.setObject3D('screen', screen)
         }
