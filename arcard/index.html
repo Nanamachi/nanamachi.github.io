@@ -5,16 +5,22 @@
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.8/aframe/build/aframe-ar.js"></script>
     <script>
-      var cylinder = new THREE.BoxGeometry(0.02,2,0.02);
+      var plane = new THREE.BoxGeometry(4,2,0.02);
+      var video = document.createElement('video');
+      video.src = "arcard_1910a.mp4";
+      var texture = new THREE.VideoTexture(video);
+      texture.minFilter = THREE.LinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      texture.format = THREE.RGBFormat
       var material = new THREE.MeshBasicMaterial({
-        color: 0xcccccc
+        map: texture
       });
-      var pole = new THREE.Mesh(cylinder, material);
-      pole.position.y = 1
+      var screen = new THREE.Mesh(plane, material);
+      screen.position.y = 1
 
       AFRAME.registerComponent('pole', {
         init: function() {
-          this.el.setObject3D('pole', pole)
+          this.el.setObject3D('screen', screen)
         }
       })
     </script>
@@ -22,7 +28,7 @@
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs="debugUIEnabled:false; patternRatio:0.75;">
       <a-marker type="pattern" url="https://nanamachi.github.io/arcard/ARcard_pattern.patt">
-        <a-entity pole></a-entity>
+        <a-entity screen></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
