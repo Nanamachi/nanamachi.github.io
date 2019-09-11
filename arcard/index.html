@@ -16,14 +16,14 @@
       var material = new THREE.MeshBasicMaterial({
         map: texture
       });
-      var screen = new THREE.Mesh(plane, material);
-      screen.rotation.x = 0.5;
-      screen.position.z = -1
-      screen.position.y = 0.2
+      var myScreen = new THREE.Mesh(plane, material);
+      myScreen.rotation.x = 0.5;
+      myScreen.position.z = -1
+      myScreen.position.y = 0.2
 
       AFRAME.registerComponent('screen', {
         init: function() {
-          this.el.setObject3D('screen', screen)
+          this.el.setObject3D('screen', myScreen)
           video.play()
         }
       })
