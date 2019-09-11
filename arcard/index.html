@@ -5,9 +5,10 @@
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.8/aframe/build/aframe-ar.js"></script>
     <script>
-      var plane = new THREE.BoxGeometry(4,0.02,2);
+      var plane = new THREE.BoxGeometry(2,0.02,2);
       var video = document.createElement('video');
       video.src = "arcard_190911a.mp4";
+      video.loop = true;
       var texture = new THREE.VideoTexture(video);
       texture.minFilter = THREE.LinearFilter;
       texture.magFilter = THREE.LinearFilter;
@@ -16,7 +17,9 @@
         map: texture
       });
       var screen = new THREE.Mesh(plane, material);
+      screen.rotate.x = 0.5;
       screen.position.z = -1
+      screen.position.y = 0.2
 
       AFRAME.registerComponent('screen', {
         init: function() {
