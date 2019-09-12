@@ -9,6 +9,8 @@
       var video = document.createElement('video');
       video.src = "arcard_190911a.mp4";
       video.loop = true;
+      video.autoplay = true;
+      
       var texture = new THREE.VideoTexture(video);
       texture.minFilter = THREE.LinearFilter;
       texture.magFilter = THREE.LinearFilter;
@@ -24,7 +26,6 @@
       AFRAME.registerComponent('screen', {
         init: function() {
           this.el.setObject3D('screen', myScreen)
-          video.play()
         }
       })
     </script>
