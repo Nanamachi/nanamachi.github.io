@@ -15,8 +15,16 @@
       <a-assets>
         <video id="screen-texture" preload="auto" loop muted src="arcard_190911a.mp4"></video>
       </a-assets>
-      <a-marker type="pattern" url="https://nanamachi.github.io/arcard/ARcard_pattern.patt">
-        <a-video src="#screen-texture" width="2" height="2" position="0 0.2 -1" rotation="-65 0 0"></a-video>
+      <a-marker id="armarker" type="pattern" url="https://nanamachi.github.io/arcard/ARcard_pattern.patt">
+        <a-video
+          src="#screen-texture"
+          width="2"
+          height="2"
+          position="0 0.2 -1"
+          rotation="-65 0 0"
+          metalness="0.15"
+          opacity="0.75"
+        ></a-video>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
