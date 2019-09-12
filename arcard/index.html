@@ -6,11 +6,8 @@
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.8/aframe/build/aframe-ar.js"></script>
     <script>
       var plane = new THREE.PlaneGeometry(2,2);
-      var video = document.createElement('video');
-      video.src = "arcard_190911a.mp4";
-      video.loop = true;
-      video.autoplay = true;
-      
+      var video = document.getElementById('arcard_texture');
+
       var texture = new THREE.VideoTexture(video);
       texture.minFilter = THREE.LinearFilter;
       texture.magFilter = THREE.LinearFilter;
@@ -31,6 +28,7 @@
     </script>
   </head>
   <body style='margin : 0px; overflow: hidden;'>
+    <video hidden src="arcard_190911a.mp4" loop autoplay preload="auto" muted id="arcard_texture"/>
     <a-scene embedded arjs="debugUIEnabled:false; patternRatio:0.75;">
       <a-marker type="pattern" url="https://nanamachi.github.io/arcard/ARcard_pattern.patt">
         <a-entity screen></a-entity>
