@@ -8,7 +8,7 @@
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs="debugUIEnabled:false; patternRatio:0.75;">
       <a-assets>
-        <video id="screen-texture" autoplay loop src="arcard_190911a.mp4"></video>
+        <video id="screen-texture" preload="auto" autoplay loop src="arcard_190911a.mp4"></video>
       </a-assets>
       <a-marker type="pattern" url="https://nanamachi.github.io/arcard/ARcard_pattern.patt">
         <a-video src="#screen-texture" width="2" height="2" position="0 0.2 -1" rotation="-1 0 0"></a-video>
